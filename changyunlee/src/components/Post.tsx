@@ -16,29 +16,36 @@ const Post = ({ postImg, profileImg, user, date, postTitle }: Props) => {
         <StyledDate>게시일: {date}</StyledDate>
         <StyledPostImage src={postImg} alt="postImg" />
         <StyledStatusCard>
-          <StyledProfileRound>
-            <StyledProfileImg src={profileImg} alt="profileImg" />
-          </StyledProfileRound>
-          <StyledP>{user}</StyledP>
+          <StyledA href="https://www.instagram.com/">
+            <StyledProfileRound>
+              <StyledProfileImg src={profileImg} alt="profileImg" />
+            </StyledProfileRound>
+            <StyledP>{user}</StyledP>
+          </StyledA>
         </StyledStatusCard>
         <StyledComment>
           <span>comment...</span>
-          <StyledLike onClick={()=>setCount(count+1)}>{count} 좋아요</StyledLike>
+          <StyledLike onClick={() => setCount(count + 1)}>
+            {count} 좋아요
+          </StyledLike>
         </StyledComment>
         <StyledLine></StyledLine>
       </StyledSection>
     </>
   );
 };
+const StyledA = styled.a`
+  all: unset;
+&:hover{cursor: pointer;
+}`;
 const StyledLike = styled.span`
- display: flex;
- text-align: center;
- justify-content: center;
-  &:hover{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  &:hover {
     color: #40afd4;
     cursor: pointer;
     transition: all 0.5s;
-    
   }
 `;
 const StyledComment = styled.div`
