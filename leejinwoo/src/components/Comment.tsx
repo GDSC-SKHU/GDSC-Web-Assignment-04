@@ -17,6 +17,11 @@ function Comment(){
 
     // 좋아요 상태 관리 [빈 하트, 빈하트가 눌리면] = 참 거짓으로 바꿔주셈~
     const [heart, setHeart] = useState(true);
+    
+    //댓글 개수에 맞춰 최신화
+    const [count, setCount] = useState<number>(0);
+
+
 
     // 새로운 댓글이 입력되면 setNcmt로 관리
     const onNcmtChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -34,17 +39,23 @@ function Comment(){
           ]);
       
         setNcmt("");    // 댓글창 초기화 해주셈~
-
+        setCount(count +1 ); // 댓글수 올려주셈~
     };
+
 
     return(
         <div className="comments">
             {/* 댓글 입력 형식 */}
             {comment.map((cmt) => (
                 <div key={cmt.id} className="ncmt">
-                    <p>: {cmt.content}</p>
+                    <p>익명{cmt.id}: {cmt.content}</p>
                 </div>
             ))}
+
+            {/* 댓글 개수 구현 새로운 댓글이 달리면 setCount(count+1) */}
+            <div className="review">
+                <p>{count}개의 댓글</p>
+            </div>
 
             {/* 제출 버튼을 누르면 onCmtSubmit 작동 */}
             {/* 라벨은 input의 이름을 적는 태그임. htmlFor에 input의 아이디나 네임을 적어 인풋과 연결함. */}
