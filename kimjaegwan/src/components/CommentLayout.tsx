@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Comment from './Comment/Comment';
-import Input from './Comment/input';
 import StyleSet from '../styles/styleSet';
 import { idText } from 'typescript';
 interface IComment {
