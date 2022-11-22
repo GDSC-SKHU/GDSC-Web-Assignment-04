@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useState } from "react";
 interface Props {
   postImg: string;
   profileImg: string;
@@ -8,6 +8,7 @@ interface Props {
   postTitle: string;
 }
 const Post = ({ postImg, profileImg, user, date, postTitle }: Props) => {
+  const [count, setCount] = useState<number>(0);
   return (
     <>
       <StyledSection>
@@ -20,12 +21,36 @@ const Post = ({ postImg, profileImg, user, date, postTitle }: Props) => {
           </StyledProfileRound>
           <StyledP>{user}</StyledP>
         </StyledStatusCard>
+        <StyledComment>
+          <span>comment...</span>
+          <StyledLike onClick={()=>setCount(count+1)}>{count} 좋아요</StyledLike>
+        </StyledComment>
         <StyledLine></StyledLine>
-        
       </StyledSection>
     </>
   );
 };
+const StyledLike = styled.span`
+ display: flex;
+ text-align: center;
+ justify-content: center;
+  &:hover{
+    color: #40afd4;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+  }
+`;
+const StyledComment = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
+  margin: 0 10px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.3);
+`;
+
 const StyledLine = styled.p`
   margin: 5px;
   padding: 0;
