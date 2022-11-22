@@ -198,7 +198,7 @@ const StyledP = styled.p`
   width: 100%;
   overflow: hidden;
   text-align: center;
-  font-size: 15px;
+  font-size: 12px;
   margin-top: 5px;
   color: rgba(0, 0, 0, 0.5);
 `;
@@ -208,7 +208,7 @@ const StyledSection = styled.section`
   max-height: min-content;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin-bottom: 150px;
+  margin-bottom: 30px;
 `;
 
 export default Post;

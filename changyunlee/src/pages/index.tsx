@@ -3,21 +3,31 @@ import { createGlobalStyle } from "styled-components";
 import Header from "../components/Header";
 import Post from "../components/Post";
 
-
-
-
 export default function Home() {
   return (
     <div>
       <GlobalStyle />
       <Header />
-     
       <Post
         postImg="/jjd.jpg"
         user="이찬균"
         profileImg="/prof.jpg"
         date="2022년 11월 22일"
         postTitle="고양이"
+      />
+      <Post
+        postImg="/royattoyafood.jpg"
+        user="Roya_ttoya"
+        profileImg="/royattoya.jpg"
+        date="2022년 11월 16일"
+        postTitle="로야토야 연남점"
+      />
+      <Post
+        postImg="/spiderman.jpg"
+        user="Tom"
+        profileImg="/tom.png"
+        date="2022년 11월 13일"
+        postTitle="Coming Soon!!"
       />
     </div>
   );
