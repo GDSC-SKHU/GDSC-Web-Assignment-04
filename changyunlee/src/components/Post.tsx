@@ -22,7 +22,6 @@ const Post = ({ postImg, profileImg, user, date, postTitle }: Props) => {
   };
   const onCommentSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    //spread
     setComment((prev) => [...prev, { id: 1, content: currentComment }]);
     console.log(currentComment);
     setCurrentComment("");
@@ -49,18 +48,20 @@ const Post = ({ postImg, profileImg, user, date, postTitle }: Props) => {
           </StyledLike>
         </StyledComment>
         <StyledLine />
-        {comment.map((comment) => (
-          <div key={comment.id}>
-            <h2>{comment.content}</h2>
-          </div>
-        ))}
-
+        <div>
+          {comment.map((comment) => (
+            <div key={comment.id}>
+              <StyledCommentList>{comment.content}</StyledCommentList>
+            </div>
+          ))}
+        </div>
         <form onSubmit={onCommentSubmit}>
-          <input
+          <StyledInput
             type="text"
             value={currentComment}
             onChange={onCurrentCommentChange}
-          ></input>
+            placeholder="leave a comment"
+          ></StyledInput>
           <StyledButton type="submit">등록</StyledButton>
         </form>
       </StyledSection>
@@ -68,6 +69,27 @@ const Post = ({ postImg, profileImg, user, date, postTitle }: Props) => {
   );
 };
 
+const StyledCommentList = styled.p`
+  margin: 0 0 0 10px;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  width: 300px;
+  font-size: 12px;
+`;
+const StyledInput = styled.input`
+  margin-top: 15px;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 2px solid #ccc;
+  width: 300px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  outline: none;
+  &:hover {
+    border-bottom: 2px solid lightblue;
+  }
+`;
 const StyledButton = styled.button`
   all: unset;
   background-color: rgba(51, 51, 51, 0.05);
@@ -80,7 +102,7 @@ const StyledButton = styled.button`
   font-weight: 500;
   line-height: 5px;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 10px;
   padding: 10px 12px;
   text-align: center;
   transition: all 200ms;
@@ -186,6 +208,7 @@ const StyledSection = styled.section`
   max-height: min-content;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-bottom: 150px;
 `;
 
 export default Post;
