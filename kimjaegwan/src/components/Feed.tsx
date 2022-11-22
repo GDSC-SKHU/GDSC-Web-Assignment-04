@@ -1,7 +1,26 @@
 import React from 'react';
-
+import styled from 'styled-components';
+import FeedState from './Feed/FeedState';
+import FeedWriter from './Feed/FeedWriter';
 const Feed = () => {
-    return <div>Feed</div>;
+    return (
+        <StyledFeed>
+            <FeedWriter />
+            <h2>본문 제목</h2>
+            <p>본문 내용</p>
+            <FeedState />
+        </StyledFeed>
+    );
 };
 
 export default Feed;
+
+const StyledFeed = styled.div`
+    border: 1px solid gray;
+    width: 600px;
+    height: fit-content;
+    h2,
+    p {
+        margin-left: 10px;
+    }
+`;

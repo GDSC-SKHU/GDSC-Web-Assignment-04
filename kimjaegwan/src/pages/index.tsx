@@ -1,14 +1,17 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import Feed from '../components/Feed';
-import CommentLayoutContainer from '../components/CommentLayoutContainer';
+import CommentLayout from '../components/CommentLayout';
+import styled from 'styled-components';
 
 export default function Home() {
+    const Container = styled.div`
+        display: flex;
+        flex-direction: column;
+    `;
+
     return (
-        <div>
+        <Container>
             <Feed />
-            <CommentLayoutContainer />
-        </div>
+            <CommentLayout />
+        </Container>
     );
 }
