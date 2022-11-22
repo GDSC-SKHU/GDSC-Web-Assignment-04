@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import FeedState from './Feed/FeedState';
 import FeedWriter from './Feed/FeedWriter';
+import StyleSet from '../styles/styleSet';
 const Feed = () => {
     return (
         <StyledFeed>
@@ -16,7 +17,7 @@ const Feed = () => {
 export default Feed;
 
 const StyledFeed = styled.div`
-    border: 1px solid gray;
+    border: 1px solid ${StyleSet.borderColor};
     width: 600px;
     height: fit-content;
     h2,
