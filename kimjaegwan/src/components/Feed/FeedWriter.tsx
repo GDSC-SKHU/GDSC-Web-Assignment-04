@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import userImg from '../../imgs/user.png';
+import dayjs from 'dayjs';
 
 function FeedWriter() {
     return (
@@ -24,7 +25,7 @@ const User = () => {
             />
             <StyledUserDetail>
                 <p>익명</p>
-                <p>12분전</p>
+                <p>{dayjs().format('MM/DD HH:mm')}</p>
             </StyledUserDetail>
         </StyledUser>
     );
