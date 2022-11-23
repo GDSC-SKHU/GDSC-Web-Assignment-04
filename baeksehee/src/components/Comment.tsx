@@ -35,7 +35,7 @@ function Comment({ imgSrc }: Props) {
   return (
     <div>
       <StyledH1>
-        <StyledSpan>sehee</StyledSpan>'s today
+        <StyledSpan>Sehee</StyledSpan>'s today
       </StyledH1>
 
       <StyledDiv>
@@ -80,7 +80,7 @@ const StyledDiv = styled.div`
 
   border: solid 1px black;
 
-  margin-left: 500px;
+  margin-left: 480px;
   overflow: auto;
 
   position: relative;
