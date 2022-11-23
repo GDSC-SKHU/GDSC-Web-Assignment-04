@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -14,9 +13,9 @@ const Post = ({ id, title, time, imgSrc }: Props) => {
   return (
     <>
       <StyledDiv>
-        <StyledSpan>#{id}</StyledSpan>
-        <StyledH2>{title}</StyledH2>
-        <StyledH3>{time}</StyledH3>
+        <span>#{id}</span>&nbsp;
+        <StyledSpan>{title}</StyledSpan>
+        <StyledH5>{time}</StyledH5>
         <StyledImgWrapper>
           <StyledImg src={imgSrc} alt={title} />
         </StyledImgWrapper>
@@ -28,15 +27,21 @@ const Post = ({ id, title, time, imgSrc }: Props) => {
 export default Post;
 
 const StyledDiv = styled.div`
-
+    margin-top: 10px;
 `;
 
-const StyledH2 = styled.h2``;
+const StyledH5 = styled.h5``;
 
-const StyledH3 = styled.h3``;
+const StyledImgWrapper = styled.div`
+  border: 2px solid white;
+`;
 
-const StyledImgWrapper = styled.div``;
+const StyledImg = styled.img`
+  max-width: 100%;
+  height: 80%;
+`;
 
-const StyledImg = styled.img``;
-
-const StyledSpan = styled.span``;
+const StyledSpan = styled.span`
+  font-weight: bold;
+  font-size: large;
+`;
