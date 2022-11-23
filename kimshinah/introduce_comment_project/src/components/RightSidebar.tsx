@@ -48,7 +48,7 @@ const RightSidebar = () => {
       </header>
 
       <section>
-        <div>
+        <div className="RightSidebar_section_postingsection">
           <RightSideBarPostSinamong>
             <p>
               서울남산타워 2022.11.15 남자친구와 함께
@@ -130,6 +130,10 @@ const RightSidebarCss = styled.div`
   section div:first-child {
     max-height: 24.5em;
     overflow: scroll;
+  }
+
+  section .RightSidebar_section_postingsection {
+    height: 100vh;
   }
 `;
 
