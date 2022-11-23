@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import React from "react";
+import { useState } from "react";
 
 interface Props {
   width?: string;
@@ -9,6 +10,7 @@ interface Props {
   alt?: string;
   radius?: string;
   margin?: string;
+  name?: string;
 }
 
 const ProfileImage = ({
@@ -18,11 +20,13 @@ const ProfileImage = ({
   alt,
   radius = "50%",
   margin = "40px",
+  name = "팔로우하기"
 }: Props) => {
   return (
     <ImgWrapper margin={margin} radius={radius}>
       <Image width={40} height={40} src={src} alt={""} />
       <StyledP>Piki</StyledP>
+      <StyledButton>{name}</StyledButton>
     </ImgWrapper>
   );
 };
@@ -45,6 +49,22 @@ const StyledP = styled.p`
   margin-left: 10px;
 `;
 
+const StyledButton = styled.button`
+  border: 2px solid #ccc;
+  background: #fff;
+  color: #696969;
+  padding: 4px 10px;
+  border-radius: 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  :hover{
+    border: 2px solid #fff;
+    background: #696969;
+    color: white;
+    transition: all .5s;
+    transform: translateY(-3px);
+  }
+`
 // function ProfileImage() {
 //   return (
 //     <>
