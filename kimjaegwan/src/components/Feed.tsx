@@ -28,7 +28,7 @@ const StyledFeed = styled.div`
     p {
         font-size: 13px;
     }
-    padding: 5px;
+    padding: 15px;
 `;
 
 const StyledAticle = styled.div`

@@ -49,7 +49,7 @@ const CommentLayout = () => {
                     content={comment.content}
                 />
             ))}
-            <form onSubmit={_onCommentSubmit}>
+            <StyledForm onSubmit={_onCommentSubmit}>
                 <input
                     id="COMMENT"
                     type="text"
@@ -59,7 +59,7 @@ const CommentLayout = () => {
                     ref={inputRef}
                 />
                 <button>댓글쓰기</button>
-            </form>
+            </StyledForm>
         </StyledCommentLayout>
     );
 };
@@ -72,5 +72,6 @@ const StyledCommentLayout = styled.div`
     display: flex;
     flex-direction: column;
 `;
+const StyledForm = styled.form``;
 
 export default CommentLayout;
