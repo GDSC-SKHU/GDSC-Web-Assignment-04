@@ -39,11 +39,13 @@ function Comment({ imgSrc }: Props) {
       </StyledH1>
 
       <StyledDiv>
+        <p>@sehee</p>
         <StyledImageWrapper>
           <StyledImg src={imgSrc}></StyledImg>
+          <p>벌써 크리스마스라니!</p>
+          <StyledP>2022. 11. 20.</StyledP>
         </StyledImageWrapper>
 
-        <p>벌써 크리스마스라니!</p>
         <p>댓글창</p>
         <div>
           {comments.map((comment) => (
@@ -75,11 +77,17 @@ export default Comment;
 const StyledDiv = styled.div`
   width: 500px;
   height: 500px;
-  border-radius: 2px;
+
   border: solid 1px black;
 
   margin-left: 500px;
   overflow: auto;
+
+  position: relative;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 `;
 
 const StyledH1 = styled.h1`
@@ -109,9 +117,16 @@ const StyledImageWrapper = styled.div`
 const StyledImg = styled.img`
   width: 100%;
   height: 80%;
+  border-radius: 15px;
 
   margin: 0px;
   object-fit: cover;
+`;
+
+const StyledP = styled.p`
+  text-align: right;
+  font-size: 4px;
+  color: gray;
 `;
 
 const StyledForm = styled.form`
