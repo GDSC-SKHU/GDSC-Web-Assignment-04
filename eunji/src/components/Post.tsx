@@ -31,6 +31,7 @@ width: 23rem;
 
 border: 1px solid lightgray;
 border-radius: 0.5em;
+box-shadow: 0px 0px 1rem #000;
 `;
 
 const ContainerName = styled.div`
