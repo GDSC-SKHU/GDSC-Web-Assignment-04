@@ -37,16 +37,24 @@ const RightSidebar = () => {
 
     setcurrentComment("");
   };
+
   return (
     <RightSidebarCss>
       <header>
-        <div></div>
+        <div>
+          <Image src={profile} alt="profile_img" width={29} height={29} />
+        </div>
         <div>sina_mong</div>
-        <div></div>
       </header>
 
       <section>
         <div>
+          <RightSideBarPostSinamong>
+            <p>
+              서울남산타워 2022.11.15 남자친구와 함께
+              <span>#서울남산타워 #부럽지? #푸풉</span>
+            </p>
+          </RightSideBarPostSinamong>
           {comments.map((comments) => (
             <RightSidebarCss_content_comment key={comments.id}>
               <Image src={profile} alt="profile_img" width={29} height={29} />
@@ -113,6 +121,10 @@ const RightSidebarCss = styled.div`
     display: flex;
     align-items: center;
     padding: 1em;
+
+    div:first-child {
+      margin-right: 1em;
+    }
   }
 
   section div:first-child {
@@ -215,5 +227,16 @@ const RightSidebarCss_form_top_emoji = styled.div`
   div:last-child img {
     width: 1.2em;
     height: 1.2em;
+  }
+`;
+
+const RightSideBarPostSinamong = styled.div`
+  font-size: 0.7em;
+  padding: 1.5em;
+  display: flex;
+  align-items: center;
+
+  span {
+    color: #3ca2dd;
   }
 `;
