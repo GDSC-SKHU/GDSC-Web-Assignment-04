@@ -10,6 +10,6 @@ const leftSidebar = () => {
 export default leftSidebar;
 
 const LeftSidebarCss = styled.div`
-  width: 65vw;
+  width: 50em;
   height: 100vh;
 `;
