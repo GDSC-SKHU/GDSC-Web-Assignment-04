@@ -24,7 +24,7 @@ const Post = ({ id, title, time, imgSrc }: Props) => {
 };
 
 const StyledDiv = styled.div`
-    margin-top: 10px;
+  margin-top: 10px;
 `;
 
 const StyledImgWrapper = styled.div`

@@ -42,9 +42,9 @@ function Comment() {
           <StyledSpan>{comment.content}</StyledSpan>
         </div>
       ))}
-      <Form onSubmit={onCommentSubmit}>
-        <Label htmlFor={INPUT_ID}>내용 : </Label>
-        <Input
+      <StyledForm onSubmit={onCommentSubmit}>
+        <StyledLabel htmlFor={INPUT_ID}>내용 : </StyledLabel>
+        <StyledInput
           id={INPUT_ID}
           onChange={onCurrentCommentChange}
           placeholder="댓글 추가..."
@@ -52,8 +52,8 @@ function Comment() {
           value={currentComment}
         />
 
-        <Button>작성</Button>
-      </Form>
+        <StyledButton>작성</StyledButton>
+      </StyledForm>
     </div>
   );
 }
@@ -73,11 +73,11 @@ const CommentSpan = styled.span`
   margin-left: 40px;
 `;
 
-const Form = styled.form`
+const StyledForm = styled.form`
   margin-top: 20px;
 `;
 
-const Label = styled.label`
+const StyledLabel = styled.label`
   font-weight: bold;
   padding: 10px;
   margin: 20px;
@@ -86,14 +86,14 @@ const Label = styled.label`
   background: #b5fcea;
 `;
 
-const Input = styled.input`
+const StyledInput = styled.input`
   width: 40%;
   margin: 10px;
   padding: 10px;
   border: none;
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
   background-color: #5598fc;
   border-radius: 4px;
   border: 0;

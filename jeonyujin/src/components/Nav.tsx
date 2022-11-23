@@ -6,17 +6,15 @@ import profile from "../../public/img/profile.jpg";
 function Nav() {
   return (
     <StyledNav>
-      <ContentWrapper>
-        <Image src={jlogo} alt="내 로고" width={50} height={50} />
-        <Span>전유진의 블로그</Span>
-      </ContentWrapper>
-      
+      <Image src={jlogo} alt="내 로고" width={50} height={50} />
+      <StyledSpan>전유진의 블로그</StyledSpan>
+
       <StyledImageWrapper>
-      <Image src={profile} alt="내 프로필" width={50} height={50} />
+        <Image src={profile} alt="내 프로필" width={50} height={50} />
       </StyledImageWrapper>
     </StyledNav>
   );
-};
+}
 
 const StyledNav = styled.nav`
   position: fixed;
@@ -28,24 +26,20 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   padding: 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
-const Span = styled.span`
-    font-weight: bold;
-    font-size: 1.5em;
-    position: relative;
-    bottom: 12px;
-    left: 15px;
-`;
-
-const ContentWrapper = styled.div`
+const StyledSpan = styled.span`
+  font-weight: bold;
+  font-size: 1.5em;
+  position: relative;
+  bottom: 12px;
+  left: 15px;
 `;
 
 const StyledImageWrapper = styled.div`
-    border: 2px solid white;
-    float: right;
-
+  border: 2px solid white;
+  float: right;
 `;
 
 export default Nav;

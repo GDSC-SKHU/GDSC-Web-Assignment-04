@@ -3,7 +3,6 @@ import Post from "./Post";
 import Comment from "./Comment";
 
 function Section() {
-
   return (
     <>
       <StyledSection>
@@ -14,16 +13,16 @@ function Section() {
             time="1시간전!!"
             imgSrc="/Lolchess.jpg"
           />
-          <Comment/>
+          <Comment />
         </PostWrapper>
         <PostWrapper>
           <Post id={2} title="치치" time="5시간전" imgSrc="/ChiChi.jpg" />
-          <Comment/>
+          <Comment />
         </PostWrapper>
-        
+
         <PostWrapper>
           <Post id={3} title="MBTI" time="13시간전" imgSrc="/MBTI.jpg" />
-          <Comment/>
+          <Comment />
         </PostWrapper>
       </StyledSection>
     </>
