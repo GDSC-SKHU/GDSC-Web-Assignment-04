@@ -3,13 +3,20 @@ import styled from 'styled-components';
 import FeedState from './Feed/FeedState';
 import FeedWriter from './Feed/FeedWriter';
 import StyleSet from '../styles/styleSet';
+import gyeongju2 from '../imgs/gyeongju2.jpeg';
+import Image from 'next/image';
 const Feed = () => {
     return (
         <StyledFeed>
             <FeedWriter />
             <StyledAticle>
-                <h2>본문 제목입니다.</h2>
-                <p>본문 내용입니다.</p>
+                <h2>경주 여행</h2>
+                <Image
+                    src={gyeongju2}
+                    alt="경주 여행 사진"
+                    height={400}
+                    style={{ objectFit: 'contain' }}
+                />
             </StyledAticle>
             <FeedState />
         </StyledFeed>

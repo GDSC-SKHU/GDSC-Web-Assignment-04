@@ -14,7 +14,8 @@ const CommentLayout = () => {
     // 에브리타임 클론코딩
 
     const [comments, setComments] = useState<IComment[]>([
-        { id: 0, name: `익명1`, content: 'test comment' },
+        { id: 0, name: `익명1`, content: '경주 여행 사진입니다!' },
+        { id: 1, name: `익명2`, content: '에브리타임을 클론코딩 했습니다!' },
     ]);
 
     const [currentComment, setCurrentComment] = useState<string>('');
