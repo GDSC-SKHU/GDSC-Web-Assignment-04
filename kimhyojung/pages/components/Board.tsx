@@ -15,7 +15,7 @@ function Board() {
       <style jsx>
         {`
           div {
-            width: 60%;
+            width: 50%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -32,9 +32,10 @@ function Board() {
             display: flex;
             justify-content: center;
           }
-          img {
+          Image {
             object-fit: cover;
             display: flex;
+            width: 100%;
             justify-content: center;
           }
           article {
