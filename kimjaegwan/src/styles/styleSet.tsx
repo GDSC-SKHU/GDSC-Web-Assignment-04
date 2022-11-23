@@ -1,6 +1,7 @@
 const StyleSet = {
     borderColor: '#dddddd',
-    buttonColor: '#b32424',
+    backgroundColor: '#f4f4f4',
+    buttonColor: '#c62917',
 };
 
 export default StyleSet;

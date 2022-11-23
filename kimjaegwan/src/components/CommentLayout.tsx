@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Comment from './Comment/Comment';
 import StyleSet from '../styles/styleSet';
 import { idText } from 'typescript';
+import Image from 'next/image';
+import submit from '../imgs/submit.png';
 interface IComment {
     id: number;
     name: string;
@@ -22,6 +24,12 @@ const CommentLayout = () => {
     const _onCommentSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(currentComment);
+
+        if (currentComment === '') {
+            alert('내용을 입력하세요.');
+            return;
+        }
+
         setComments([
             ...comments,
             {
@@ -58,7 +66,15 @@ const CommentLayout = () => {
                     value={currentComment}
                     ref={inputRef}
                 />
-                <button>댓글쓰기</button>
+                <button>
+                    <Image
+                        src={submit}
+                        width={40}
+                        height={45}
+                        alt="submit"
+                        style={{ objectFit: 'cover' }}
+                    />
+                </button>
             </StyledForm>
         </StyledCommentLayout>
     );
@@ -72,6 +88,25 @@ const StyledCommentLayout = styled.div`
     display: flex;
     flex-direction: column;
 `;
-const StyledForm = styled.form``;
+const StyledForm = styled.form`
+    display: flex;
+    input {
+        all: unset;
+        background-color: ${StyleSet.backgroundColor};
+        height: 35px;
+        width: 92%;
+        font-size: 13px;
+        padding: 5px;
+    }
+    button {
+        all: unset;
+        height: 100%;
+        width: 8%;
+        background-color: ${StyleSet.buttonColor};
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+    }
+`;
 
 export default CommentLayout;
