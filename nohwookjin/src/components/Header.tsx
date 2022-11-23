@@ -1,14 +1,14 @@
 import styled from "styled-components";
+import Image from "next/image";
+import gdsc from "../../public/images/gdsc2.png";
 
 const Header = () => {
   return (
     <StyledNav>
-      <div>
-        <span>GDSC</span>
-      </div>
-      <div>
-        <span>고민중</span>
-      </div>
+      <StyledDiv>
+        <Image src={gdsc} alt="profile" width={40} height={25} />
+        <StyledSpan>GDSC - WEB</StyledSpan>
+      </StyledDiv>
     </StyledNav>
   );
 };
@@ -28,4 +28,12 @@ const StyledNav = styled.nav`
   margin-bottom: 5rem;
   background-color: #171717;
   position: fixed;
+  z-index: 999;
+`;
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const StyledSpan = styled.span`
+  margin-left: 1rem;
 `;
