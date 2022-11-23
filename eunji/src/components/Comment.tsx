@@ -6,7 +6,7 @@ interface IComment {
 }
 
 export default function Comment() {
-    const [Comments, setComment] = useState<IComment[]>([{ content: '' }]);
+    const [comments, setComment] = useState<IComment[]>([{ content: '' }]);
 
     const [currentComment, setCurrentComment] = useState<string>('');
 
@@ -27,7 +27,7 @@ export default function Comment() {
 
     return (
         <div>
-            {Comments.map((comment) => (
+            {comments.map((comment) => (
                 <div>
                     <StyledP>{comment.content}</StyledP>
                 </div>
