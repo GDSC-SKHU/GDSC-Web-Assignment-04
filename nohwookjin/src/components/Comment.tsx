@@ -33,7 +33,7 @@ const Comment = () => {
     commentTime();
   };
 
-  const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setCurrentText(value);
   };
@@ -53,18 +53,20 @@ const Comment = () => {
           <StyledButton>댓글 작성</StyledButton>
         </StyledButtonBox>
       </StyledForm>
-      {comment.map((comments) => (
-        <StyledCommentBox key={comments.id}>
-          <StyledCommentUser>
-            <Image src={profile} alt="profile" width={50} height={50} />
-            <StyledUserInfo>
-              <StyledUserName>{comments.name}</StyledUserName>
-              <StyledDate>{time}</StyledDate>
-            </StyledUserInfo>
-          </StyledCommentUser>
-          <StyledContents>{comments.comment}</StyledContents>
-        </StyledCommentBox>
-      ))}
+      <StyledCommentList>
+        {comment.map((comments) => (
+          <StyledCommentBox key={comments.id}>
+            <StyledCommentUser>
+              <Image src={profile} alt="profile" width={50} height={50} />
+              <StyledUserInfo>
+                <StyledUserName>{comments.name}</StyledUserName>
+                <StyledDate>{time}</StyledDate>
+              </StyledUserInfo>
+            </StyledCommentUser>
+            <StyledContents>{comments.comment}</StyledContents>
+          </StyledCommentBox>
+        ))}
+      </StyledCommentList>
     </StyledContainer>
   );
 };
@@ -83,11 +85,15 @@ const StyledTitle = styled.div`
 const StyledForm = styled.form`
   width: 100%;
 `;
-const StyledTextArea = styled.textarea`
+const StyledCommentList = styled.div`
   width: 100%;
-  resize: none;
-  padding: 1rem 1rem 1.5rem;
-  border-radius: 4px;
+`;
+const StyledTextArea = styled.input`
+  width: 100%;
+  border: none;
+  background-color: #1e1e1e;
+  padding: 3rem 1rem;
+  border-radius: 0.3rem;
 `;
 const StyledButtonBox = styled.div`
   display: flex;
@@ -118,6 +124,7 @@ const StyledContents = styled.div`
   margin-top: 2rem;
   margin-left: 0.5rem;
   font-size: 1.25rem;
+  overflow: hidden;
 `;
 const StyledUserInfo = styled.div`
   display: flex;
