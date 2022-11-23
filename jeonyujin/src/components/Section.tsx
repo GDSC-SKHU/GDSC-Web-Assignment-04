@@ -1,14 +1,10 @@
-import Post from "../components/Post";
 import styled from "styled-components";
-import Nav from "../components/Nav";
+import Post from "./Post";
+import Comment from "./Comment";
 
-function Blog() {
+function Section() {
   return (
     <>
-      <Nav
-      imgSrc1="/jlogo.jpg"
-      imgSrc2="/profile.jpg" 
-      />
       <StyledSection>
         <PostWrapper>
           <Post
@@ -17,19 +13,21 @@ function Blog() {
             time="1시간전!!"
             imgSrc="/Lolchess.jpg"
           />
+          <Comment/>
         </PostWrapper>
         <PostWrapper>
           <Post id={2} title="고양이" time="5시간전" imgSrc="/ChiChi.jpg" />
+          <Comment/>
         </PostWrapper>
+        
         <PostWrapper>
           <Post id={3} title="MBTI" time="13시간전" imgSrc="/MBTI.jpg" />
+          <Comment/>
         </PostWrapper>
       </StyledSection>
     </>
   );
 }
-
-
 
 const StyledSection = styled.section`
   width: 60%;
@@ -49,4 +47,4 @@ const PostWrapper = styled.div`
   border: 2px solid white;
 `;
 
-export default Blog;
+export default Section;

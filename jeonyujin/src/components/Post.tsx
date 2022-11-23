@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 interface Props {
@@ -24,8 +23,6 @@ const Post = ({ id, title, time, imgSrc }: Props) => {
   );
 };
 
-export default Post;
-
 const StyledDiv = styled.div`
     margin-top: 10px;
 `;
@@ -45,3 +42,5 @@ const StyledSpan = styled.span`
   font-weight: bold;
   font-size: large;
 `;
+
+export default Post;

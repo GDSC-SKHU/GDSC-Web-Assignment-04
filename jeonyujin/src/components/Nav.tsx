@@ -3,7 +3,7 @@ import Image from "next/image";
 import jlogo from "../../public/img/jlogo.jpg";
 import profile from "../../public/img/profile.jpg";
 
-const Nav = () => {
+function Nav() {
   return (
     <StyledNav>
       <ContentWrapper>
@@ -46,4 +46,5 @@ const StyledImageWrapper = styled.div`
     float: right;
 
 `;
+
 export default Nav;
