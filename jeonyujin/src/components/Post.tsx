@@ -14,7 +14,7 @@ const Post = ({ id, title, time, imgSrc }: Props) => {
       <StyledDiv>
         <span>#{id}</span>&nbsp;
         <StyledSpan>{title}</StyledSpan>
-        <StyledH5>{time}</StyledH5>
+        <h5>{time}</h5>
         <StyledImgWrapper>
           <StyledImg src={imgSrc} alt={title} />
         </StyledImgWrapper>
@@ -27,15 +27,12 @@ const StyledDiv = styled.div`
     margin-top: 10px;
 `;
 
-const StyledH5 = styled.h5``;
-
 const StyledImgWrapper = styled.div`
-  border: 2px solid white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 `;
 
 const StyledImg = styled.img`
   max-width: 100%;
-  height: 80%;
 `;
 
 const StyledSpan = styled.span`

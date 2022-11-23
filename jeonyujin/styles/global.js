@@ -1,32 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
-
   * {
     align-items: center;
     box-sizing: border-box;
-    font-family: "Roboto", "Noto Sans KR", sans-serif; 
+    font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; 
   }
- 
-@font-face {
-  font-family: 'Roboto', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,400;1,500&display=swap')
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-  unicode-range: U+0041-005A, U+0061-007A;
-}
-
-@font-face {
-  font-family: 'Noto Sans KR', sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap')
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-  unicode-range: U+AC00-U+D7A3;
-}
 `;
 
 export default GlobalStyle;

@@ -3,6 +3,7 @@ import Post from "./Post";
 import Comment from "./Comment";
 
 function Section() {
+
   return (
     <>
       <StyledSection>
@@ -16,7 +17,7 @@ function Section() {
           <Comment/>
         </PostWrapper>
         <PostWrapper>
-          <Post id={2} title="고양이" time="5시간전" imgSrc="/ChiChi.jpg" />
+          <Post id={2} title="치치" time="5시간전" imgSrc="/ChiChi.jpg" />
           <Comment/>
         </PostWrapper>
         
@@ -40,11 +41,13 @@ const StyledSection = styled.section`
   // 아이템 세로 정렬
   background: aliceblue;
   border: 1px solid white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 const PostWrapper = styled.div`
   margin: 30px 0;
-  border: 2px solid white;
+  border: 5px solid white;
+  background: #e3fffd;
 `;
 
 export default Section;

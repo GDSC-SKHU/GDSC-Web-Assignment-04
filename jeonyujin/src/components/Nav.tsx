@@ -28,6 +28,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   padding: 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
 `;
 
 const Span = styled.span`
