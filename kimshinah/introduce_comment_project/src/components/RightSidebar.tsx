@@ -6,6 +6,7 @@ import heart from "../../public/img/heart.png";
 import chat from "../../public/img/chat.png";
 import dm from "../../public/img/dm.png";
 import bookmark from "../../public/img/bookmark.png";
+import profile from "../../public/img/user.png";
 
 //className이름을 지어두고 사용은 안하면 안되나?
 //map함수 알아보기
@@ -47,9 +48,16 @@ const RightSidebar = () => {
       <section>
         <div>
           {comments.map((comments) => (
-            <div key={comments.id}>
-              <p>{comments.content}</p>
-            </div>
+            <RightSidebarCss_content_comment key={comments.id}>
+              <Image src={profile} alt="profile_img" width={29} height={29} />
+              <RightSidebarCss_content_comment_detail>
+                <div>
+                  <p>익명 {comments.id + 1}</p>
+                  <p>{comments.content}</p>
+                </div>
+                <Image src={heart} alt="heart" width={10} height={10} />
+              </RightSidebarCss_content_comment_detail>
+            </RightSidebarCss_content_comment>
           ))}
         </div>
 
@@ -70,6 +78,7 @@ const RightSidebar = () => {
             <div>좋아요 1,431개</div>
             <div>1일 전</div>
           </RightSidebarCss_form_top>
+
           <RightSidebarCss_form onSubmit={onSubmitComment}>
             <Image_Container>
               <Image src={emotionicon} alt="picture" />
@@ -105,6 +114,30 @@ const RightSidebarCss = styled.div`
     align-items: center;
     padding: 1em;
   }
+
+  section div:first-child {
+    max-height: 24.5em;
+    overflow: scroll;
+  }
+`;
+
+//글 마다 간격 떨어뜨려놓아서 댓글 보기 편하게 만들기
+const RightSidebarCss_content_comment = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  font-size: 0.75em;
+
+  p {
+    margin-left: 1em;
+  }
+`;
+
+const RightSidebarCss_content_comment_detail = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const RightSidebarCss_form = styled.form`
