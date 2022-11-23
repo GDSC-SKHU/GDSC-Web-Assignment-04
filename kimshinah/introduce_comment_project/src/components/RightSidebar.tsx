@@ -12,22 +12,37 @@ const RightSidebar = () => {
   ]);
   const [currentComment, setcurrentComment] = useState<string>("");
 
-  const onCurrentTodoChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onCurrentCommentChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target; //{value}랑 ChangeEvent<HTMLInputElement>가 뭔지 모르겠네..
     setcurrentComment(value);
     console.log(currentComment);
+  };
+
+  const onSubmitComment = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setComments((prev) => [
+      ...prev,
+      { id: prev.length + 1, content: currentComment },
+    ]);
+
+    setcurrentComment("");
   };
   return (
     <RightSidebarCss>
       <header>꺄앍</header>
 
       <section>
-        <form>
+        {comments.map((comments) => (
+          <div key={comments.id}>
+            <p>{comments.content}</p>
+          </div>
+        ))}
+        <form onSubmit={onSubmitComment}>
           <input
             id="commentInput"
             type="text"
             value={currentComment}
-            onChange={onCurrentTodoChange}
+            onChange={onCurrentCommentChange}
           />
           <button>작성</button>
         </form>
