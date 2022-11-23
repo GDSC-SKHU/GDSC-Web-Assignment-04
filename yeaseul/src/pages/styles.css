@@ -1,0 +1,84 @@
+body{
+    margin: 40px;
+}
+.feed{
+    border: 3px solid rgb(59, 59, 59);
+    padding: 5px;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    margin-top: 0px;
+}
+.kong{
+    text-align: center;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 8px grey;
+}
+
+.heart{
+    display: flex;
+    justify-content: space-around;
+
+}
+.like{
+    color: rgb(120, 120, 120);
+    margin: 12px;
+}
+
+.list{
+    list-style: none;
+    margin: 10px 20px 10px 15px;
+
+}
+.commentInput{
+    margin: 30px 0px 10px 45px;
+    border: 2px solid lightgray;
+    padding: 10px;
+    font-size: 17px;
+    width: 19rem;
+}
+.commentBox{
+    display: flex;
+    flex-direction: column;
+    width: 410px;
+    border: 3px solid rgb(59, 59, 59);
+    height: 150px;
+    overflow: scroll;
+}
+article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list li{
+    margin-top: 10px;
+}
+.name{
+    width: 300px;
+}
+h4{
+    margin: 0px;
+}
+.name p{
+    margin: 3px 0px 15px 0px;
+}
+.num{
+    font-weight: bolder;
+    margin-bottom: 3px;
+}
+.heartBox{
+    width: 300px;
+    flex-direction: row;
+    display: flex;
+}
+.date{
+    font-size: smaller;
+    margin-top: 5px;
+    color: gray;
+}
