@@ -45,8 +45,9 @@ function Comment() {
       {comments.map((comment) => (
         <div key={comment.id}>
           <StyledCommet>
-          <h2>{comment.name}</h2>
-          <h2>{comment.content}</h2>
+          <CommentProfile/>
+          <StyledCommentName>{comment.name}</StyledCommentName>
+          <StyledCommentContet>{comment.content}</StyledCommentContet>
           </StyledCommet>
         </div>
       ))}
@@ -128,6 +129,18 @@ const StyledButton = styled.button`
 `;
 const StyledCommet = styled.h2`
   display: flex;
-  font-size: 10px;
-  justify-content: space-between;
-`;
+  width: 100%;
+  font-size: 14px;
+  align-items: center;
+  margin-top: 6px;
+`
+
+const StyledCommentName = styled.h2`
+  font-size: 12px;
+  flex-grow: 1;
+`
+
+const StyledCommentContet = styled.h2`
+display: flex;
+flex-grow: 2;
+`
