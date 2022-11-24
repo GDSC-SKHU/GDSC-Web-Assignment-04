@@ -32,7 +32,7 @@ const RightSidebar = () => {
     e.preventDefault();
     setComments((prev) => [
       ...prev,
-      { id: prev.length + 1, content: currentComment },
+      { id: prev.length, content: currentComment },
     ]);
 
     setcurrentComment("");
@@ -129,11 +129,11 @@ const RightSidebarCss = styled.div`
 
   section div:first-child {
     max-height: 24.5em;
-    overflow: scroll;
   }
 
   section .RightSidebar_section_postingsection {
     height: 100vh;
+    overflow-y: scroll;
   }
 `;
 
